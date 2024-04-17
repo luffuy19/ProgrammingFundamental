@@ -29,5 +29,6 @@ public class TestMain {
 		lib2.setDateOfPublish("20/45/1997");
 		al.add(lib2);
 		al.forEach(item -> System.out.println(item));
+		sc.close();
 	}
 }

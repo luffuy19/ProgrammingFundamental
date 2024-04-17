@@ -3,7 +3,7 @@ package com.chainys.day7;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbcBank {
+public class AbcBankVersion1 {
 	public static Bank BankDatabase(long accntNo,String ifsc,long phoneNo) {
 		List<Bank> dataBase=new ArrayList<Bank>();
 		Bank b1=new Bank();
