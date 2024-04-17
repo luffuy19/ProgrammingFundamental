@@ -8,17 +8,18 @@ public class Bank {
 	public String branchLocation;
 	
 	public Bank(int bankAccntNo, String holderName, String ifscCode, long phoneNo, String branchLocation) {
-		super();
+		
 		this.bankAccntNo = bankAccntNo;
 		this.holderName = holderName;
 		this.ifscCode = ifscCode;
 		this.phoneNo = phoneNo;
 		this.branchLocation = branchLocation;
 	}
+	
 	public Bank() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
+
 	public long getBankAccntNo() {
 		return bankAccntNo;
 	}
@@ -54,5 +55,8 @@ public class Bank {
 		return "Welcome to ABC Bank"+"\n"+"Account Details"+"\n"+"Bank [bankAccntNo=" + bankAccntNo + ", holderName=" + holderName + ", ifscCode=" + ifscCode
 				+ ", phoneNo=" + phoneNo + ", branchLocation=" + branchLocation + "]";
 	}
+	public boolean isEmpty() {
+        return bankAccntNo == 0 && holderName == null;
+    }
 	
 }
