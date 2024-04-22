@@ -21,10 +21,9 @@ public class StudentDb {
 	}
 	
 	public static String updateName(int rollNo,String name) {
-		System.out.println("Enter your Name");
 		String validateName = StudentValidation.validateName(name);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(3500);
+		Student student = studentDetail.get(rollNo);
 		student.setStudentName(validateName);
 		return "Name was changed";
 	}
@@ -86,11 +85,12 @@ public class StudentDb {
 		char validateCharacter = StudentValidation.validateCharacter(StudentClass);
 		System.out.println("Enter your mentor");
 		String mentor=sc.next();
-		String validateMentor = StudentValidation.validateName(name);
+		String validateMentor = StudentValidation.validateName(mentor);
 		Student student=new Student(rollNo,validateName,validateAttendence,validateRank,validateTotal,validateCharacter,validateMentor);
 		
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		studentDetail.put(rollNo, student);
+		sc.close();
 		
 	}
 	
