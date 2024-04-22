@@ -2,8 +2,8 @@ package com.chainsys.day2;
 
 import java.util.Scanner;
 
-public class Hospital {
-	public static void main(String[] args) {
+public abstract class Hospital2 implements Hospital1{
+	public void hospitalDetails() {
 		String HospitalName;
 		int noOfAmbulance;
 		String location;
@@ -19,5 +19,5 @@ public class Hospital {
 		hasDoctorAvaiable=sc.nextBoolean();
 		System.out.println("HospitalName : "+HospitalName+"\n"+"No of Ambulance :"+noOfAmbulance+"\n"+"Location :"+location+"\n"+"hasDoctorAvaiable : "+hasDoctorAvaiable);
 	}
-
+	
 }
