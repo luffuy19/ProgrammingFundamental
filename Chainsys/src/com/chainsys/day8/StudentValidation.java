@@ -30,4 +30,12 @@ public class StudentValidation {
 		studentClass=sc.next();
 		return validateCharacter(studentClass);
 	}	
+	public static String validateStandard(String standard) {
+		if(standard.matches("^[I||II||III||IV||V||VI||VII||VIII||IX||X]$")) {
+			return standard;
+		}
+		System.out.println("Enter the valid Standard in RomanLetter(I||II||III||IV||V||VI||VII||VIII||IX|X)");
+		standard=sc.next();
+		return validateStandard(standard);
+	}
 }
