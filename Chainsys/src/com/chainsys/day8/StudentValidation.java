@@ -15,7 +15,7 @@ public class StudentValidation {
 	}
 	
 	public static int validateNumber(String attendence) {
-		if(attendence.matches("^[0-9]{1,3}$")) {
+		if(attendence.matches("^[0-9]+$")) {
 			return Integer.parseInt(attendence);
 		}
 		System.out.println("Enter Value in Number "+attendence+" is not a number");

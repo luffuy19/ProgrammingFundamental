@@ -1,5 +1,7 @@
 package com.chainsys.day8;
+import java.security.KeyStore.Entry;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class StudentDb {
@@ -10,7 +12,7 @@ public class StudentDb {
 		Student student4=new Student(3503,"Vikram",85,5,390,'C',"Vinitha");
 		Student student5=new Student(3504,"Manoj",96,3,460,'B',"Suji");
 		Student student6=new Student(3505,"Babu",98,1,500,'E',"Suresh");
-		HashMap<Integer, Student> student= new HashMap<Integer,Student>();
+		HashMap<Integer,Student> student= new HashMap<Integer,Student>();
 		student.put(3500, student1);
 		student.put(3501, student2);
 		student.put(3502, student3);
@@ -20,52 +22,62 @@ public class StudentDb {
 		return student;
 	}
 	
-	public static String updateName(int rollNo,String name) {
+	public static String updateName(String rollNo,String name) {
+		int validateNumber = StudentValidation.validateNumber(rollNo);
 		String validateName = StudentValidation.validateName(name);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
+		Student student = studentDetail.get(validateNumber);
 		student.setStudentName(validateName);
 		return "Name was changed";
 	}
-	public static void updateAttendence(int rollNo,String attendence) {
-		int validateNumber = StudentValidation.validateNumber(attendence);
+	public static String updateAttendence(String rollNo,String attendence) {
+		int validateNumber = StudentValidation.validateNumber(rollNo);
+		int validateAttendence = StudentValidation.validateNumber(attendence);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
-		student.setAttendence(validateNumber);
+		Student student = studentDetail.get(validateNumber);
+		student.setAttendence(validateAttendence);
+		return "Attendence was updated";
 	}
-	public static void updateStudentRank(int rollNo,String rank) {
+	public static Student updateStudentRank(String rollNo,String rank) {
 		int validateNumber = StudentValidation.validateNumber(rank);
+		int validateRollNo = StudentValidation.validateNumber(rollNo);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
+		Student student = studentDetail.get(validateRollNo);
 		student.setStudentRank(validateNumber);
+		return student;
 	}
-	public static void updateStudentClass(int rollNo,String studentClass) {
+	public static Student updateStudentClass(String rollNo,String studentClass) {
 		char validateclass = StudentValidation.validateCharacter(studentClass);
+		int validateRollNo = StudentValidation.validateNumber(rollNo);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
+		Student student = studentDetail.get(validateRollNo);
 		student.setStudentClass(validateclass);
+		return student;
 	}
-	public static String updateStudentMentor(int rollNo,String name) {
-		System.out.println("Enter your Name");
+	public static Student updateStudentMentor(String mentorRollNo,String name) {
+		int validateRollNo = StudentValidation.validateNumber(mentorRollNo);
 		String validateName = StudentValidation.validateName(name);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(3500);
+		Student student = studentDetail.get(validateRollNo);
 		student.setMentorName(validateName);
-		return "Name was changed";
+		return student;
 	}
-	public static void updateStudentTotal(int rollNo,String total) {
-		int validateNumber = StudentValidation.validateNumber(total);
+	public static Student updateStudentTotal(String rollNo,String total) {
+		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		int validateTotal = StudentValidation.validateNumber(total);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
-		student.setTotal(validateNumber);
+		Student student = studentDetail.get(validateRollNo);
+		student.setTotal(validateTotal);
+		return student;
 	}
-	public static void deleteStudent(int rollNo) {
+	public static void deleteStudent(String rollNo) {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		Student student = studentDetail.get(rollNo);
+		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		Student student = studentDetail.get(validateRollNo);
 		studentDetail.remove(student);
 		System.out.println(student+" details was removed");
 	}
-	public static void addStudent() {
+	public static Student addStudent() {
 		int rollNo=3506;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter your Name");
@@ -91,7 +103,14 @@ public class StudentDb {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		studentDetail.put(rollNo, student);
 		sc.close();
+		return student;
 		
+	}
+	public static void showStudentDetails() {
+		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
+		for(Map.Entry<Integer,Student> student : studentDetail.entrySet()) {
+			System.out.println(student);
+		}
 	}
 	
 }
