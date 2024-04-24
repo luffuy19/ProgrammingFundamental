@@ -24,78 +24,113 @@ public class StudentDb {
 		return studentDB;
 	}
 	
-	public static Student updateName(String rollNo,String name) {
-		int validateNumber = StudentValidation.validateNumber(rollNo);
+	public static void updateName(String rollNo,String name) {
+		int validateNumber = StudentValidation.validateRollNo(rollNo);
 		String validateName = StudentValidation.validateName(name);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateNumber);
 		student.setStudentName(validateName);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateAttendence(String rollNo,String attendence) {
-		int validateNumber = StudentValidation.validateNumber(rollNo);
+	public static void updateAttendence(String rollNo,String attendence) {
+		int validateNumber = StudentValidation.validateRollNo(rollNo);
 		int validateAttendence = StudentValidation.validateNumber(attendence);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateNumber);
 		student.setAttendence(validateAttendence);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateStudentRank(String rollNo,String rank) {
+	public static void updateStudentRank(String rollNo,String rank) {
 		int validateNumber = StudentValidation.validateNumber(rank);
-		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		int validateRollNo = StudentValidation.validateRollNo(rollNo);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateRollNo);
 		student.setStudentRank(validateNumber);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateStudentClass(String rollNo,String studentClass) {
+	public static void updateStudentClass(String rollNo,String studentClass) {
 		char validateclass = StudentValidation.validateCharacter(studentClass);
-		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		int validateRollNo = StudentValidation.validateRollNo(rollNo);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateRollNo);
 		student.setStudentClass(validateclass);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateStudentMentor(String mentorRollNo,String name) {
-		int validateRollNo = StudentValidation.validateNumber(mentorRollNo);
+	public static void updateStudentMentor(String mentorRollNo,String name) {
+		int validateRollNo = StudentValidation.validateRollNo(mentorRollNo);
 		String validateName = StudentValidation.validateName(name);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateRollNo);
 		student.setMentorName(validateName);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateStudentTotal(String rollNo,String total) {
-		int validateRollNo = StudentValidation.validateNumber(rollNo);
+	public static void updateStudentTotal(String rollNo,String total) {
+		int validateRollNo = StudentValidation.validateRollNo(rollNo);
 		int validateTotal = StudentValidation.validateNumber(total);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateRollNo);
 		student.setTotal(validateTotal);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public static Student updateStandard(String rollNo,String standard) {
+	public static void updateStandard(String rollNo,String standard) {
 		String validateStandard = StudentValidation.validateStandard(standard);
-		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		int validateRollNo = StudentValidation.validateRollNo(rollNo);
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		Student student = studentDetail.get(validateRollNo);
 		student.setStandard(validateStandard);
 		StudentDb.studentDetail(student);
-		return student;
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
 	public static void deleteStudent(String rollNo) {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
-		int validateRollNo = StudentValidation.validateNumber(rollNo);
+		int validateRollNo = StudentValidation.validateRollNo(rollNo);
 		Student student = studentDetail.get(validateRollNo);
 		studentDetail.remove(student);
 		StudentDb.studentDetail(student);
-		System.out.println(student+" details was removed");
+		System.out.println("Details was removed");
 	}
-	public static Student addStudent() {
+	public static void addStudent() {
 		int rollNo=3506;
 		String a="Sachinnathan";
 		String b="Suji";
@@ -131,14 +166,25 @@ public class StudentDb {
 			validateMentor=d;
 		Student student=new Student(rollNo,validateName,validateAttendence,validateRank,validateTotal,validateStandard,validateCharacter,validateMentor);
 		studentDB.put(student.getRollNo(), student);
-		return student;
-		
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
+				,student.getStandard(),student.getStudentClass(),student.getMentorName());
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
 	public static void showStudentDetails() {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail(null);
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 		for(Map.Entry<Integer,Student> student : studentDetail.entrySet()) {
-			System.out.println(student);
+			System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getValue().rollNo,student.getValue().getStudentName() ,student.getValue().getAttendence(),
+					student.getValue().getStudentRank(),student.getValue().getTotal(),student.getValue().getStandard(),student.getValue().getStudentClass()
+					,student.getValue().getMentorName() );
 		}
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		
 	}
 	
 }

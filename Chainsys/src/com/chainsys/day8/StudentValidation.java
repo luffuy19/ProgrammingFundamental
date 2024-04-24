@@ -5,6 +5,16 @@ import java.util.regex.Pattern;
 
 public class StudentValidation {
 	public static Scanner sc=new Scanner(System.in);
+	public static int validateRollNo(String rollNo) {
+		int number = validateNumber(rollNo);
+		while(true) {
+			if(number>=3500) {
+				return number;
+			}
+			System.out.println("Enter value from 3500");
+			number=sc.nextInt();
+		}
+	}
 	public static String validateName(String name) {
 		if(Pattern.matches("^[a-zA-Z]{3,25}", name)) {
 			return name;
@@ -31,7 +41,7 @@ public class StudentValidation {
 		return validateCharacter(studentClass);
 	}	
 	public static String validateStandard(String standard) {
-		if(standard.matches("^[I||II||III||IV||V||VI||VII||VIII||IX||X]$")) {
+		if(standard.matches("^[I||II||III||IV||V||VI||VII||VIII||IX||X]+$")) {
 			return standard;
 		}
 		System.out.println("Enter the valid Standard in RomanLetter(I||II||III||IV||V||VI||VII||VIII||IX|X)");
