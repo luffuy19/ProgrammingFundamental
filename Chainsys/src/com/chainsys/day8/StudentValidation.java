@@ -48,4 +48,12 @@ public class StudentValidation {
 		standard=sc.next();
 		return validateStandard(standard);
 	}
+	public static String validatepassword(String password) {
+		if(password.matches("^[A-Z][a-z]+[0-9]+[*#$%&!]$")) {
+			return password;
+		}
+		System.out.println("Enter the Password with alteast one Caps and ends with Number");
+		password=sc.next();
+		return validateName(password);
+	}
 }
