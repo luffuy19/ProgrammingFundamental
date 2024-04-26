@@ -54,6 +54,6 @@ public class StudentValidation {
 		}
 		System.out.println("Enter the Password with alteast one Caps and ends with Number");
 		password=sc.next();
-		return validateName(password);
+		return validatepassword(password);
 	}
 }

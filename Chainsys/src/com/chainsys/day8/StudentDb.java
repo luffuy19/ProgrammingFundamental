@@ -122,6 +122,7 @@ public class StudentDb {
 				,student.getStandard(),student.getStudentClass(),student.getMentorName());
 		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 	}
+	@SuppressWarnings("unlikely-arg-type")
 	public static void deleteStudent(String rollNo) {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail();
 		int validateRollNo = StudentValidation.validateRollNo(rollNo);
@@ -172,6 +173,7 @@ public class StudentDb {
 		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
 				,student.getStandard(),student.getStudentClass(),student.getMentorName());
 		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		sc.close();
 	}
 	public static void showStudentDetails() {
 		HashMap<Integer, Student> studentDetail = StudentDb.studentDetail(null);

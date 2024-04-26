@@ -21,7 +21,7 @@ public class StudentLogic {
 			while (n == 1) {
 				System.out.println();
 				System.out.println("Enter the Option" + "\n" + "\n" + "1 ) Update Name" + "\n" + "2 ) Update Attendence"
-						+ "\n" + "3 ) Update StudentRank" + "\n" + "4 ) Update StudentClass" + "\n"
+						+ "\n" + "3 ) Update Student Rank" + "\n" + "4 ) Update Student Class" + "\n"
 						+ "5 ) Update Student Mentor" + "\n" + "6 ) Update Student Total" + "\n"
 						+ "7 ) Update Student Standard" + "\n" + "8 ) Delete Student" + "\n" + "9 ) Add Student" + "\n"
 						+ "10) Show Student Detail" + "\n" + "11) Exit");
@@ -97,5 +97,6 @@ public class StudentLogic {
 		} else {
 			System.out.println("\n" + "User Not found");
 		}
+		sc.close();
 	}
 }
