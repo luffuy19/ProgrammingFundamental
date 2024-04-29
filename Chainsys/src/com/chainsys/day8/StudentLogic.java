@@ -26,7 +26,8 @@ public class StudentLogic {
 						+ "7 ) Update Student Standard" + "\n" + "8 ) Delete Student" + "\n" + "9 ) Add Student" + "\n"
 						+ "10) Show Student Detail" + "\n" + "11) Exit");
 				System.out.println();
-				num = sc.nextInt();
+				String num1 = sc.next();
+				num = StudentValidation.validateNumber(num1);
 				switch (num) {
 
 				case 1:

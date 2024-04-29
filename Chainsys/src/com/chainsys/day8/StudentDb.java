@@ -7,6 +7,7 @@ public class StudentDb {
 	  
 	private static HashMap<Integer, Student> studentDB=studentDetail();
 	public static HashMap<Integer,Student> studentDetail() {
+		//used hashmap to get student data by rollNo by using key
 		HashMap<Integer,Student> student= new HashMap<Integer,Student>();
 		student.put(3500, new Student(3500,"Ajith",90,2,490,"X",'A',"Sachinnathan"));
 		student.put(3501, new Student(3501,"Kishore",75,1,500,"X",'D',"Suresh"));
@@ -31,6 +32,7 @@ public class StudentDb {
 		Student student = studentDetail.get(validateNumber);
 		student.setStudentName(validateName);
 		StudentDb.studentDetail(student);
+		//used format for good view in console
 		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
 		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
 		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
