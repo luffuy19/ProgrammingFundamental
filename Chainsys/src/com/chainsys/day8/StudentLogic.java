@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class StudentLogic {
 	public static void logic() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Welcome to Student Application");
-		System.out.println("------------------------------");
-		System.out.println();
+		Message message = new Message();
+		message.startingMessage();
 		System.out.print("Enter Teacher User Creditinal : ");
 		String username = sc.next();
 		String validateName = StudentValidation.validateName(username);
@@ -18,14 +17,9 @@ public class StudentLogic {
 		if (validateName.equals("manikandan") && validatepassword.equals("Mani123#")) {
 			int n = 1;
 			int num = 0;
+			message.switchMessage();
 			while (n == 1) {
-				System.out.println();
-				System.out.println("Enter the Option" + "\n" + "\n" + "1 ) Update Name" + "\n" + "2 ) Update Attendence"
-						+ "\n" + "3 ) Update Student Rank" + "\n" + "4 ) Update Student Class" + "\n"
-						+ "5 ) Update Student Mentor" + "\n" + "6 ) Update Student Total" + "\n"
-						+ "7 ) Update Student Standard" + "\n" + "8 ) Delete Student" + "\n" + "9 ) Add Student" + "\n"
-						+ "10) Show Student Detail" + "\n" + "11) Exit");
-				System.out.println();
+		
 				String num1 = sc.next();
 				num = StudentValidation.validateNumber(num1);
 				switch (num) {

@@ -33,12 +33,12 @@ public class StudentDb {
 		student.setStudentName(validateName);
 		StudentDb.studentDetail(student);
 		//used format for good view in console
-		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.printf("%9s %15s %15s %15s %15s %15s %15s %19s\n", "RollNo", "Student Name", "Attendence","Student Rank","Total","Standard","Student Class","Mentor Name");
-		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.printf("%8s %12s %15s %14s %19s %14s %14s %19s\n",student.getRollNo(),student.getStudentName(),student.getAttendence(),student.getStudentRank(),student.getTotal()
 				,student.getStandard(),student.getStudentClass(),student.getMentorName());
-		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
 	}
 	public static void updateAttendence(String rollNo,String attendence) {
 		int validateNumber = StudentValidation.validateRollNo(rollNo);
